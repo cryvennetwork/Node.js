@@ -31,11 +31,3 @@ Membangun jembatan keuangan baru di mana pendapatan iklan digital digunakan untu
 4. Token hasil buyback → sebagian didistribusikan ke miner, sebagian dibakar (burn).  
    
 📌 Semakin banyak pengguna & traffic, semakin besar potensi reward + deflasi supply.
-
----
-
-## 🛠 Cara Jalankan (Local)
-1. Clone repo:
-   ```bash
-   git clone https://github.com/username/cryvennetwork.git
-   cd cryvennetwork

@@ -1,4 +1,3 @@
-# Node.js
 # 🚀 Cryven Network Mining dApp
 
 Selamat datang di **Cryven Network** – revolusi keuangan **dari komunitas untuk komunitas**.  

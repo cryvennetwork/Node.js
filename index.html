@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <title>Cryven Web Mining</title>
+  <style>
+    body {
+      margin: 0;
+      background: black;
+      overflow: hidden;
+      color: white;
+      font-family: sans-serif;
+      text-align: center;
+    }
+    #globeViz {
+      width: 100vw;
+      height: 100vh;
+    }
+    .overlay {
+      position: absolute;
+      top: 20px;
+      width: 100%;
+      text-align: center;
+    }
+    .btn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #9333ea;
+      border: none;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div id="globeViz"></div>
+  <div class="overlay">
+    <h1>🌍 Cryven Web Mining</h1>
+    <p>Revolusi Keuangan dari Komunitas untuk Komunitas</p>
+    <button class="btn">Mulai Mining</button><br><br>
+    <a href="https://github.com/username/node-js-mining" target="_blank">
+      <button class="btn" style="background:#2563eb;">🔗 Lihat Source di GitHub</button>
+    </a>
+  </div>
+
+  <script src="https://unpkg.com/three"></script>
+  <script src="https://unpkg.com/three-globe"></script>
+  <script>
+    const Globe = new ThreeGlobe()
+      .globeImageUrl('//unpkg.com/three-globe/example/img/earth-dark.jpg')
+      .pointsData([{ lat: 0, lng: 0, size: 1 }]);
+
+    const renderer = new THREE.WebGLRenderer();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    document.getElementById("globeViz").appendChild(renderer.domElement);
+
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera();
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    camera.position.z = 300;
+    scene.add(Globe);
+
+    const ambientLight = new THREE.AmbientLight(0xbbbbbb);
+    scene.add(ambientLight);
+
+    const directionalLight = new THREE.DirectionalLight(0xffffff, 0.6);
+    directionalLight.position.set(1, 1, 1);
+    scene.add(directionalLight);
+
+    function animate() {
+      requestAnimationFrame(animate);
+      Globe.rotation.y += 0.002; // biar globe berputar
+      renderer.render(scene, camera);
+    }
+    animate();
+  </script>
+</body>
+        </html>
